@@ -7,10 +7,20 @@ import { PersonComponent } from './person.component';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, PersonComponent],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  template: `
+  <h1>App</h1>
+
+  <div *ngIf="toggle">
+    <h2>Toggle</h2>
+    <app-person [clearSelect]="clearSelect" (personChosenE)="onPersonSelected($event)"/>
+  </div>  
+  `,
+  styles: [],
 })
 export class AppComponent {
   title = 'demo';
   toggle = false;
+  clearSelect = false;
+
+  onPersonSelected(person: string): void {}
 }

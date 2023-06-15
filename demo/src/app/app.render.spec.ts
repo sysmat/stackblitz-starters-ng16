@@ -11,9 +11,9 @@ describe('testing AddComponent with render', () => {
   it('should render app title', async () => {
     const { getByText } = await render(AppComponent, { imports, providers });
 
-    const title = await getByText(/User/i);
+    const title = await getByText(/App/i);
     expect(title).toBeDefined();
-    expect(title.innerHTML).toBe('User');
+    expect(title.innerHTML).toBe('App');
     expect(title.tagName).toBe('H1');
   });
 
@@ -28,5 +28,10 @@ describe('testing AddComponent with render', () => {
     expect(toggle).toBeDefined();
     expect(toggle.innerHTML).toBe('Toggle');
     expect(toggle.tagName).toBe('H2');
+
+    const person = await getByText(/person/i);
+    expect(person).toBeDefined();
+    expect(person.innerHTML).toBe('person');
+    expect(person.tagName).toBe('P');
   });
 });
