@@ -33,5 +33,10 @@ describe('testing AddComponent with render', () => {
     expect(person).toBeDefined();
     expect(person.innerHTML).toBe('person');
     expect(person.tagName).toBe('P');
+
+    const selected = await getByText(/selected/i);
+    expect(selected).toBeDefined();
+    expect(selected.innerHTML).toBe('selected:');
+    expect(selected.tagName).toBe('STRONG');
   });
 });

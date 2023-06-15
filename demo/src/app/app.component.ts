@@ -13,6 +13,9 @@ import { PersonComponent } from './person.component';
   <div *ngIf="toggle">
     <h2>Toggle</h2>
     <app-person [clearSelect]="clearSelect" (personChosenE)="onPersonSelected($event)"/>
+    <div *ngIf="selectedPerson">
+      <strong>selected:</strong>&nbsp;{{person}}
+    </div>
   </div>  
   `,
   styles: [],
@@ -21,6 +24,11 @@ export class AppComponent {
   title = 'demo';
   toggle = false;
   clearSelect = false;
+  selectedPerson = true;
+  person = '';
 
-  onPersonSelected(person: string): void {}
+  onPersonSelected(person: string): void {
+    this.selectedPerson = true;
+    this.person = person;
+  }
 }
