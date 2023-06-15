@@ -1,8 +1,7 @@
-import { HttpClientModule } from '@angular/common/http';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { fireEvent, render } from '@testing-library/angular';
+import { render } from '@testing-library/angular';
 import { AppComponent } from './app.component';
 
 describe('testing AddComponent with render', () => {
